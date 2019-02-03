@@ -1,0 +1,17 @@
+#
+# Generated with Matisse Schema Definition Language 9.1.10
+# Generation date: Wed Apr 04 13:39:47 2018
+#
+# Mapping of Java classes and indexes to the corresponding database schema objects
+#
+banco.CuentasBancarias = banco.CuentasBancarias
+banco.Id_pk = banco.Id_pk
+banco.cuent = banco.cuent
+banco.dn = banco.dn
+banco.Propietarios = banco.Propietarios
+banco.id_prop = banco.id_prop
+banco.dn2 = banco.dn2
+banco.Historial = banco.Historial
+banco.prim = banco.prim
+banco.Operaciones = banco.Operaciones
+banco.prim2 = banco.prim2
