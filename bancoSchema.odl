@@ -1,0 +1,72 @@
+//                         -*-c++-*-
+//
+// Application Schema Description
+// Generated with Matisse Schema Definition Language 9.1.10 
+//
+// Generation date: Thu Apr 05 06:35:00 2018
+// Generated from database 'banco@LAPTOP-4O3CF97N'
+//
+
+
+
+module banco
+{
+
+
+  // Interface Definitions
+  //----------------------
+
+  interface CuentasBancarias : persistent {
+    attribute Integer Id_CuentaBancaria;
+    attribute String<20> Numero_Cuenta;
+    attribute String<20> Propietario;
+    attribute String<20> DNI;
+    attribute Integer Saldo;
+    mt_index Id_pk
+      unique_key TRUE
+      criteria {CuentasBancarias::Id_CuentaBancaria MT_ASCEND};
+    mt_index cuent
+      unique_key TRUE
+      criteria {CuentasBancarias::Numero_Cuenta MT_ASCEND};
+    mt_index dn
+      unique_key TRUE
+      criteria {CuentasBancarias::DNI MT_ASCEND};
+  };
+
+  interface Propietarios : persistent {
+    attribute Integer Id_Propietario;
+    attribute String<20> DNI;
+    attribute String<20> Usuario;
+    attribute String<20> Nombre;
+    attribute String<20> Primer_Apellido;
+    attribute String<20> Segundo_Apellido;
+    attribute String<20> Numero_Secreto;
+    mt_index id_prop
+      unique_key TRUE
+      criteria {Propietarios::Id_Propietario MT_ASCEND};
+    mt_index dn2
+      unique_key TRUE
+      criteria {Propietarios::DNI MT_ASCEND};
+  };
+
+  interface Historial : persistent {
+    attribute Integer Id_Historial;
+    attribute String<30> Tipo_Evento;
+    attribute String<30> Fecha_Hora;
+    attribute String<30> Numero_Cuenta;
+    mt_index prim
+      unique_key TRUE
+      criteria {Historial::Id_Historial MT_ASCEND};
+  };
+
+  interface Operaciones : persistent {
+    attribute Integer Id_Operacion;
+    attribute String<30> Fecha_Hora;
+    attribute String<30> Numero_Cuenta;
+    attribute String<30> Tipo_Operacion;
+    attribute Integer Cantidad;
+    mt_index prim2
+      unique_key TRUE
+      criteria {Operaciones::Id_Operacion MT_ASCEND};
+  };
+};
